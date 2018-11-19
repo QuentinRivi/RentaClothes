@@ -7,7 +7,7 @@ class ClothesController < ApplicationController
 
   end
 
-  def show
+  def index
 
   end
 
