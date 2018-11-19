@@ -1,5 +1,8 @@
 class ClothesController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_clothe, only: [:show, :edit, :update, :destroy]
+
 
   def new
     @clothe = Clothe.new
@@ -9,6 +12,10 @@ class ClothesController < ApplicationController
 
   end
 
+
+  def index
+    @clothes = Clothe.all
+  end
 
   def edit
     @clothe
