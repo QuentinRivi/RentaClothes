@@ -23,7 +23,7 @@ class ClothesController < ApplicationController
   end
 
   def destroy
-
+    @clothe.destroy
   end
 
   def show
