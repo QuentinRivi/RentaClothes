@@ -1,0 +1,24 @@
+<div class="notif-card">
+
+  <div class="notif-img">
+     <%= image_tag notification.rental.clothe.photo, class:"round-small-img"%>
+  </div>
+
+  <div class="notif-content">
+
+    <div class="notif-date">
+      <p><%= notification.created_at.to_s(:long_ordinal) %></p>
+    </div>
+
+
+    <div class="notif-title">
+      <p>Your clothe <%= notification.rental.clothe.name %> has been rented.</p>
+    </div>
+
+    <div class="notif-description">
+      <p>Please contact <%= notification.rental.renter.first_name %> <%= notification.rental.renter.last_name %> at <%= notification.rental.renter.email%> and send your clothe.</p>
+    </div>
+
+  </div>
+
+</div>
