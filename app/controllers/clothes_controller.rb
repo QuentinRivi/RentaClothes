@@ -25,9 +25,6 @@ class ClothesController < ApplicationController
 
   end
 
-  def index
-    @clothes = Clothe.new
-  end
 
   def destroy
 
