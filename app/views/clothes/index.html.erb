@@ -1,0 +1,8 @@
+<h1>Choose a clothe to rent!</h1>
+
+
+<% @clothes.each do |clothe| %>
+  <div class="col-xs-12 col-md-4">
+   <%= render 'clothecard', clothe: clothe %>
+</div>
+<% end %>
