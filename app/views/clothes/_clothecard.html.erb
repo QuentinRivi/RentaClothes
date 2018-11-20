@@ -1,8 +1,18 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-  <div class="card-category"><%= clothe.state %></div>
+<div class="card-clothe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+
+  <div class="card-state">
+    State: <% clothe.state.times do %><i class="fas fa-star fa-xs"></i><% end %><% (5 - clothe.state).times do %><i class="far fa-star fa-xs"></i><% end %>
+
+  </div>
+
   <div class="card-description">
     <h2><%= clothe.name %></h2>
-    <p><%= clothe.size %></p>
+  </div>
+  <div class="card-brand">
+    <p><%= clothe.brand %></p>
+  </div>
+  <div class="card-size">
+    <p class="label label-primary"><%= clothe.size %></p>
   </div>
   <a class="card-link" href="#" ></a>
 </div>
