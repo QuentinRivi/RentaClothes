@@ -16,8 +16,10 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'cloudinary'
-
+gem 'cloudinary', require: false
+gem 'activestorage-cloudinary-service'
+gem 'rest-client', '~> 2.0'
+gem 'image_processing', '~> 1.2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
