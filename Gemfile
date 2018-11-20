@@ -25,6 +25,7 @@ gem 'cloudinary', require: false
 gem 'activestorage-cloudinary-service'
 gem 'rest-client', '~> 2.0'
 gem 'image_processing', '~> 1.2'
+gem 'activestorage-validator'
 
 
 group :development do
