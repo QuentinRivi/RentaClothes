@@ -5,7 +5,7 @@
 <% @notifications.each do |notification| %>
   <div class="notification-card">
     <p><%= notification.created_at %></p>
-    <p>Your clothe <%= notification.rental.clothe.name %> has been rented by <%= notification.receiver.email %></p>
+    <p>Your clothe <%= notification.rental.clothe.name %> has been rented by <%= notification.rental.renter.email %></p>
   </div>
 <% end %>
 
