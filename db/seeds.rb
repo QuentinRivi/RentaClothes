@@ -37,3 +37,4 @@ puts "done"
 puts "Creating Notifications"
 notif1 = Notification.create(rental: rental1, receiver: arthur )
 puts "done"
+

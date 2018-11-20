@@ -1,7 +1,7 @@
 class ClothesController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_clothe, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_clothe, only: [:edit, :update, :destroy]
 
 
   def new
@@ -10,6 +10,9 @@ class ClothesController < ApplicationController
 
   def create
     @clothe = Clothe.new(clothe_params)
+    @clothe.owner = current_user
+    # @clothe.photo.attach(params[:photo])
+
     if @clothe.save
       redirect_to clothes_path
     else
@@ -22,7 +25,6 @@ class ClothesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -38,13 +40,13 @@ class ClothesController < ApplicationController
   end
 
   def show
-
+    @clothe = Clothe.find(params[:id])
   end
 
   private
 
   def clothe_params
-    params.require(:clothe).permit(:name, :owner_id, :size, :brand, :state)
+    params.require(:clothe).permit(:name, :size, :brand, :state, :photo)
   end
 
   def set_clothe
