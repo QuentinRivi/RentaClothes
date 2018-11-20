@@ -37,6 +37,7 @@ class ClothesController < ApplicationController
 
   def destroy
     @clothe.destroy
+    redirect_to '/clothes', :notice => "Your clothe has been deleted"
   end
 
   def show

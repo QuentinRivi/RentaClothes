@@ -19,6 +19,10 @@
         <%= @clothe.owner.last_name %>
         <br><br>
 
+        <%= link_to 'Delete this Clothe !', clothe_path(@clothe), :method => :delete  %>
+
+
+
 
         <%= link_to 'Rent this clothe!' ,{controller: 'rentals', action: 'create', clothe_id: @clothe.id,  renter_id: current_user.id}, {:method => :post} %>
         <a class="btn btn-primary" href= "/clothes">Menu</a>
