@@ -1,0 +1,12 @@
+<div class="container">
+
+<h1>Your notifications</h1>
+
+<% @notifications.each do |notification| %>
+  <div class="notification-card">
+    <p><%= notification.created_at %></p>
+    <p>Your clothe <%= notification.rental.clothe.name %> has been rented by <%= notification.receiver.email %></p>
+  </div>
+<% end %>
+
+</div>
