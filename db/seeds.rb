@@ -32,5 +32,3 @@ rental1 = Rental.create(renter_id: pierre.id, clothe_id: chaussure.id)
 rental2 = Rental.create(renter_id: louis.id, clothe_id: chaussure.id)
 rantal3 = Rental.create(renter_id: arthur.id, clothe_id: tee_shirt.id)
 puts "done"
-
-
