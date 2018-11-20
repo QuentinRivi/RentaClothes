@@ -9,24 +9,28 @@ class ClothesController < ApplicationController
   end
 
   def create
-
+    @clothe = Clothe.new(clothe_params)
+    if @clothe.save
+      redirect_to clothes_path
+    else
+      render :new
+    end
   end
-
 
   def index
     @clothes = Clothe.all
   end
 
   def edit
-    @clothe
+
   end
 
   def update
-
-  end
-
-  def index
-    @clothes = Clothe.new
+    if @clothe.update(clothe_params)
+      redirect_to clothe_path(@clothe)
+    else
+      render :edit
+    end
   end
 
   def destroy
