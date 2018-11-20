@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_143226) do
+ActiveRecord::Schema.define(version: 2018_11_20_110942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2018_11_19_143226) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_clothes_on_owner_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.boolean "read", default: false
+    t.bigint "receiver_id"
+    t.bigint "rental_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_notifications_on_receiver_id"
+    t.index ["rental_id"], name: "index_notifications_on_rental_id"
   end
 
   create_table "rentals", force: :cascade do |t|
@@ -50,5 +60,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_143226) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "notifications", "rentals"
+  add_foreign_key "notifications", "users", column: "receiver_id"
   add_foreign_key "rentals", "clothes"
 end
