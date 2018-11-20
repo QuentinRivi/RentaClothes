@@ -17,7 +17,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary'
-
+gem 'activestorage-cloudinary-service'
+gem 'image_processing', '~> 1.2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
