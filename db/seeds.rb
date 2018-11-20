@@ -8,6 +8,7 @@
 Clothe.destroy_all
 Rental.destroy_all
 User.destroy_all
+Notification.destroy_all
 
 puts 'Crating users'
 pierre = User.create(first_name: 'Pierre', last_name: "Kiroul", address: "Lyon", email: "pierrot@gmail.com", password: "azerty")
@@ -33,4 +34,7 @@ rental2 = Rental.create(renter_id: louis.id, clothe_id: chaussure.id)
 rantal3 = Rental.create(renter_id: arthur.id, clothe_id: tee_shirt.id)
 puts "done"
 
+puts "Creating Notifications"
+notif1 = Notification.create(rental: rental1, receiver: arthur )
+puts "done"
 

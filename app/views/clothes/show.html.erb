@@ -1,0 +1,25 @@
+  <div class="container text-center">
+    <div class = "box-white">
+      <h1> <strong> <%= @clothe.name %> </strong> </h1>
+      <br>
+        <%= image_tag("https://images.unsplash.com/photo-1534233650908-b471f2350922?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e865ea1c454ce3190bf0f40f83839263&auto=format&fit=crop&w=500&q=60", :alt => "shoe") %>
+        <br><br>
+          <% @clothe.state.times do %><i class="fas fa-star fa-xs"></i><% end %><% (5 - @clothe.state).times do %><i class= "far fa-star fa-xs"></i><% end %>
+        <br><br>
+
+       <strong>Size :</strong>
+        <%= @clothe.size %>
+        <br><br>
+        <strong>Brand :</strong>
+        <%= @clothe.brand %>
+        <br><br>
+
+        The owner's name is
+        <%= @clothe.owner.first_name %>
+        <%= @clothe.owner.last_name %>
+        <br><br>
+
+        <a class="btn btn-primary" href= "#">Rent it now!</a>
+        <br>
+      </div>
+  </div>
