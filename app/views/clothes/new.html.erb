@@ -1,0 +1,29 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil');
+</style>
+
+<thead>
+  <tr>
+
+    <%= simple_form_for(@clothe) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="bannernew" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://lookbook.veja-store.com/wp-content/thumbnails/uploads/sites/2/2018/06/veja_aw18_vincent_fr3-1-tt-width-756-height-534-fill-0-crop-1-bgcolor-ffffff-except_gif-1.jpg');">
+      <div class="banner-content">
+          <h1>New Clothe to rent</h1>
+          <div class="form-inputs">
+            <%= f.input :name %>
+            <%= f.input :brand %>
+            <%= f.input :size %>
+            <%= f.input :state %>
+          </div>
+        <p class="form-actions"><%= f.button :submit %></p>
+         <button type="button" class="waves-effect btn-empty btn"><%= link_to "Back", clothes_path %></button>
+      </div>
+    </div>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
+<% end %>
