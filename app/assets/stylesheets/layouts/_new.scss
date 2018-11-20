@@ -21,6 +21,27 @@
   margin-bottom: 30px;
 }
 
+
+
 .btn {
-  color: blue;
+  color: white;
+  background: rgba(0,0,0,0);
+  border: solid 3px white;
 }
+.btn:hover {
+  border-color: #8ad89f;
+  color: #8ad89f;
+  font-weight: bold;
+}
+ .btn:active {
+  border-color: #bdbfc2;
+  color: #bdbfc2;
+}
+
+.btnback:hover {
+  border-color: #c2413b;
+  color: #c2413b;
+}
+
+
+
