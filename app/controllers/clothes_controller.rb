@@ -1,7 +1,7 @@
 class ClothesController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_clothe, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_clothe, only: [:edit, :update, :destroy]
 
 
   def new
@@ -12,7 +12,6 @@ class ClothesController < ApplicationController
 
   end
 
-
   def index
     @clothes = Clothe.all
   end
@@ -22,19 +21,13 @@ class ClothesController < ApplicationController
   end
 
   def update
-
-  end
-
-  def index
-    @clothes = Clothe.new
   end
 
   def destroy
-
   end
 
   def show
-
+    @clothe = Clothe.find(params[:id])
   end
 
   private
