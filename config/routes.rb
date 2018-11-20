@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :clothes do
     resources :rentals
   end
+  resources :notifications, only: [:index]
   root to: 'pages#home'
 end
