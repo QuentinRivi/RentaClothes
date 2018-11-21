@@ -3,7 +3,20 @@ class Clothe < ApplicationRecord
   has_many :renters, through: :rentals
   has_one_attached :photo
 
-  def img_thumbnail
-    cl_image_tag(photo, width: 200, crop: "scale")
+
+  def address
+    owner.address
+  end
+
+  def longitude
+    owner.longitude
+  end
+
+  def latitude
+    owner.latitude
+  end
+
+  def localisable?
+    latitude.present? && longitude.present?
   end
 end
