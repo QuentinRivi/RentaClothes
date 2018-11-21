@@ -19,6 +19,7 @@ gem 'webpacker'
 
 
 gem 'flutie'
+gem 'ransack'
 
 
 gem 'cloudinary', require: false

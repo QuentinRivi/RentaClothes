@@ -1,7 +1,26 @@
+
+<div>
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.label :brand_start %>
+  <%= f.search_field :brand_start %>
+
+  <%= f.label :size_cont %>
+  <%= f.search_field :size_cont %>
+
+  <%= f.submit %>
+  <%= link_to "Back", clothes_path, :class => :"btneo btnback" %>
+  <% end %>
+
+</div>
+
+
 <div class="container text-center">
 
   <h1>Choose a clothe to rent!</h1>
-
 
   <% @clothes.each do |clothe| %>
     <div class="col-xs-12 col-md-4">

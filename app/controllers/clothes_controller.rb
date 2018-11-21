@@ -21,7 +21,8 @@ class ClothesController < ApplicationController
   end
 
   def index
-    @clothes = Clothe.all
+   @q = Clothe.ransack(params[:q])
+   @clothes = @q.result(distinct: true)
   end
 
   def edit
