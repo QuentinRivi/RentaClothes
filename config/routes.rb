@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     resources :rentals
   end
   resources :notifications, only: [:index]
-  root to: 'pages#home'
+  root to: 'clothes#index'
 end
