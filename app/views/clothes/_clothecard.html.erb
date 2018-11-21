@@ -1,4 +1,4 @@
-<div class="card-clothe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+<div class="card-clothe" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= rails_blob_url(clothe.photo) %>);">
 
   <div class="card-state">
     State: <% clothe.state.times do %><i class="fas fa-star fa-xs"></i><% end %><% (5 - clothe.state).times do %><i class="far fa-star fa-xs"></i><% end %>
