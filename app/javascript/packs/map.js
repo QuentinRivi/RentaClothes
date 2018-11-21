@@ -4,17 +4,19 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 const mapElement = document.getElementById('map');
 const markers = JSON.parse(mapElement.dataset.markers);
-const addressInput = document.getElementById('flat_address');
+
 
 if (mapElement) { // only build a map if there's a div#map to inject into
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10'
+    style: 'mapbox://styles/nanass/cjorb39586zip2so39l3aglyp'
   });
   markers.forEach((marker) => {
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
+      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML(marker.infoWindow.content))
       .addTo(map);
   });
   if (markers.length === 0) {
@@ -35,4 +37,4 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   }
 
 
-
+// const addressInput = document.getElementById('flat_address');
