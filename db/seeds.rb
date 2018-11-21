@@ -11,8 +11,8 @@ Clothe.destroy_all
 User.destroy_all
 
 puts 'Crating users'
-manue = User.create(first_name: 'Emmanuelle', last_name: "Nadal", address: "Lyon", email: "manue.nadal@gmail.com", password: "azerty")
-quentin = User.create(first_name: 'Quentin', last_name: "Riviere", address: "Paris", email: "quentin.l.riviere@gmail.com", password: "azerty")
+manue = User.create(first_name: 'Emmanuelle', last_name: "Nadal", address: "Villeurbanne", email: "manue.nadal@gmail.com", password: "azerty")
+quentin = User.create(first_name: 'Quentin', last_name: "Riviere", address: "Lyon", email: "quentin.l.riviere@gmail.com", password: "azerty")
 arthur = User.create(first_name: 'Arthur', last_name: "john", address: "Marseille", email: "arthur@gmail.com", password: "azerty")
 puts "done"
 
