@@ -1,0 +1,46 @@
+.clothes-new {
+
+  .bannernew {
+    color: white;
+    text-align: center;
+    height: 100vh;
+    /* if you have a 70px navbar => height: calc(100vh - 70px); */
+    background-size: cover !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bannernew h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  .bannernew p {
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin-bottom: 30px;
+  }
+
+  .btneo {
+    color: white;
+    background: rgba(0,0,0,0);
+    border: solid 3px white;
+  }
+  .btneo:hover {
+    border-color: #8ad89f;
+    color: #8ad89f;
+    font-weight: bold;
+  }
+   .btneo:active {
+    border-color: #bdbfc2;
+    color: #bdbfc2;
+  }
+
+  .btnback:hover {
+    border-color: #c2413b;
+    color: #c2413b;
+  }
+}
+

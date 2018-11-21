@@ -17,10 +17,12 @@
             <div> <br>
             <a><%= f.file_field :photo , label: 'Choose photo of your clothe'%></a>
             </div> <br>
-             <%= f.button :submit, :class => :"btnneo" %>
+
+             <%= f.button :submit, :class => :"clothes-new" %>
           </div> <br>
           <div>
-            <%= link_to "Back", clothes_path, :class => :"btnneo btnback" %>
+            <%= link_to "Back", clothes_path, :class => :"clothes-new" %>
+
           </div>
       </div>
     </div>

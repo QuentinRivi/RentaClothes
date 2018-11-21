@@ -2,7 +2,7 @@
     <div class = "box-white">
       <h1> <strong> <%= @clothe.name %> </strong> </h1>
       <br>
-        <%= image_tag @clothe.photo, :alt => "shoe" %>
+        <%= image_tag @clothe.photo.variant(resize: '458x458') %>
         <br><br>
           <% @clothe.state.times do %><i class="fas fa-star fa-xs"></i><% end %><% (5 - @clothe.state).times do %><i class= "far fa-star fa-xs"></i><% end %>
         <br><br>
@@ -18,6 +18,10 @@
         <%= @clothe.owner.first_name %>
         <%= @clothe.owner.last_name %>
         <br><br>
+
+        <%= link_to 'Delete this Clothe !', clothe_path(@clothe), :method => :delete  %>
+
+
 
 
         <%= link_to 'Rent this clothe!' ,{controller: 'rentals', action: 'create', clothe_id: @clothe.id,  renter_id: current_user.id}, {:method => :post} %>

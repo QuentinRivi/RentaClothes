@@ -1,3 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+@import "sign_in";
+@import "sign_up";
+@import "new_clothe";
+
+.title-style {
+  font-size: 30px;
+}

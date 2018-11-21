@@ -38,6 +38,8 @@ GEM
       activerecord (= 5.2.1)
       marcel (~> 0.3.1)
     activestorage-cloudinary-service (0.2.0)
+    activestorage-validator (0.1.0)
+      rails (~> 5.2.0)
     activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
@@ -77,6 +79,7 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    flutie (2.1.0)
     font-awesome-sass (5.0.13)
       sassc (>= 1.11)
     globalid (0.4.1)
@@ -229,12 +232,14 @@ PLATFORMS
 
 DEPENDENCIES
   activestorage-cloudinary-service
+  activestorage-validator
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)
   cloudinary
   devise
   dotenv-rails
+  flutie
   font-awesome-sass (~> 5.0.9)
   image_processing (~> 1.2)
   jbuilder (~> 2.0)
