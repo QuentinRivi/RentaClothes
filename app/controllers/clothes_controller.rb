@@ -23,6 +23,14 @@ class ClothesController < ApplicationController
   def index
     @q = Clothe.ransack(params[:q])
     @clothes = @q.result(distinct: true)
+    @clothes_on_map = Clothe.select { |clothe| clothe.localisable? }
+
+      @markers = @clothes_on_map.map do |clothe|
+        {
+          lng: clothe.longitude,
+          lat: clothe.latitude
+        }
+      end
   end
 
   def edit

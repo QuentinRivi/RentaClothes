@@ -44,8 +44,6 @@ ActiveRecord::Schema.define(version: 2018_11_21_103227) do
     t.integer "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "latitude"
-    t.float "longitude"
     t.index ["owner_id"], name: "index_clothes_on_owner_id"
   end
 
@@ -79,6 +77,8 @@ ActiveRecord::Schema.define(version: 2018_11_21_103227) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
