@@ -2,7 +2,9 @@
     <div class = "box-white">
       <h1> <strong> <%= @clothe.name %> </strong> </h1>
       <br>
-        <%= image_tag @clothe.photo.variant(resize: '458x458') %>
+        <% if @clothe.photo.attached? %>
+          <%= image_tag @clothe.photo.variant(resize: '458x458') %>
+        <% end %>
         <br><br>
           <% @clothe.state.times do %><i class="fas fa-star fa-xs"></i><% end %><% (5 - @clothe.state).times do %><i class= "far fa-star fa-xs"></i><% end %>
         <br><br>
