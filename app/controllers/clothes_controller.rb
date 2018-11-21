@@ -1,3 +1,4 @@
+
 class ClothesController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index, :show]
@@ -21,7 +22,8 @@ class ClothesController < ApplicationController
   end
 
   def index
-    @clothes = Clothe.all
+   @q = Clothe.ransack(params[:q])
+   @clothes = @q.result(distinct: true)
   end
 
   def edit
