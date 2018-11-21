@@ -10,7 +10,7 @@ Rental.destroy_all
 Clothe.destroy_all
 User.destroy_all
 
-puts 'Crating users'
+puts 'Creating users'
 pierre = User.create(first_name: 'Pierre', last_name: "Kiroul", address: "Lyon", email: "pierrot@gmail.com", password: "azerty")
 louis = User.create(first_name: 'Louis', last_name: "Labrocante", address: "Paris", email: "louis@gmail.com", password: "azerty")
 arthur = User.create(first_name: 'Arthur', last_name: "john", address: "Marseille", email: "arthur@gmail.com", password: "azerty")
