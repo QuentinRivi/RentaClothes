@@ -3,6 +3,7 @@ class Clothe < ApplicationRecord
   has_many :renters, through: :rentals
   has_one_attached :photo
 
+
   def address
     owner.address
   end

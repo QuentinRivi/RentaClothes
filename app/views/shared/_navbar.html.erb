@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "logorentaclothe.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,7 +10,6 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Clothes", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Notifications", notifications_path, class: "navbar-wagon-item navbar-wagon-link" %>
 

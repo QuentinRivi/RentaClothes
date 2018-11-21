@@ -1,6 +1,6 @@
 <div class="container">
 
-<h1>Your notifications</h1>
+<h1>Hello, <%= current_user.first_name %></h1>
 
 <% @notifications.each do |notification| %>
   <%= render 'notif_card', notification: notification %>

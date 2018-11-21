@@ -28,7 +28,8 @@ class ClothesController < ApplicationController
       @markers = @clothes_on_map.map do |clothe|
         {
           lng: clothe.longitude,
-          lat: clothe.latitude
+          lat: clothe.latitude,
+          infoWindow: { content: render_to_string(partial: "/clothes/map_window", locals: { clothe: clothe }) }
         }
       end
   end
