@@ -16,15 +16,16 @@ louis = User.create(first_name: 'Louis', last_name: "Labrocante", address: "Pari
 arthur = User.create(first_name: 'Arthur', last_name: "john", address: "Marseille", email: "arthur@gmail.com", password: "azerty")
 puts "done"
 
-p pierre
-p pierre.id
 
 puts "Creating Clothes"
-tee_shirt = Clothe.new(name: 'Tee-shirt', size: "XXL", brand: "Lafuma", state: "4", owner_id: pierre.id)
-p tee_shirt.save!
-pull = Clothe.new(name: 'Pull', size: "XS", brand: "Sergio", state: "2", owner_id: louis.id)
-p pull.save!
-chaussure = Clothe.new(name: 'Chaussure', size: "32", brand: "Lacoste", state: "5", owner_id: arthur.id)
+tee_shirt = Clothe.create(name: 'Tee-shirt', size: "XXL", brand: "Lafuma", state: "4", owner_id: pierre.id)
+tee_shirt.photo.attach(io: File.open('./app/assets/images/pull.jpg'), filename: 'pull.jpg')
+tee_shirt.save!
+pull = Clothe.create(name: 'Pull', size: "XS", brand: "Sergio", state: "2", owner_id: louis.id)
+pull.photo.attach(io: File.open('./app/assets/images/tee-shirt.jpg'), filename: 'tee-shirt.jpg')
+pull.save!
+chaussure = Clothe.create(name: 'Chaussure', size: "32", brand: "Lacoste", state: "5", owner_id: arthur.id)
+chaussure.photo.attach(io: File.open('./app/assets/images/chaussure.jpg'), filename: 'chaussure.jpg')
 p chaussure.save!
 puts "done"
 
@@ -34,7 +35,5 @@ rental2 = Rental.create(renter_id: louis.id, clothe_id: chaussure.id)
 rantal3 = Rental.create(renter_id: arthur.id, clothe_id: tee_shirt.id)
 puts "done"
 
-puts "Creating Notifications"
-notif1 = Notification.create(rental: rental1, receiver: arthur )
-puts "done"
+
 
