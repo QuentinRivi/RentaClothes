@@ -9,13 +9,13 @@
 <%= search_form_for @q do |f| %>
 
   <%= f.label :"Looking for :", :class => :"textwhite" %>
-  <%= f.search_field :name_cont, :class => :"inputstyle"  %>
+  <%= f.search_field :name_cont, :class => :"inputstyle textwhite"  %>
 
   <%= f.label :"Brand :", :class => :"textwhite" %>
-  <%= f.search_field :brand_start, :class => :"inputstyle" %>
+  <%= f.search_field :brand_start, :class => :"inputstyle textwhite" %>
 
   <%= f.label :"Size :", :class => :"textwhite" %>
-  <%= f.search_field :size_cont, :class => :"inputstyle" %>
+  <%= f.search_field :size_cont, :class => :"inputstyle textwhite" %>
 
   <%= f.submit :class => :"btn btn-primary" %>
   <%= link_to "Reset", clothes_path, :class => :"btn btn-primary" %>
