@@ -68,6 +68,18 @@ class ClothesController < ApplicationController
     redirect_to '/clothes', notice: "Your clothe has been deleted"
   end
 
+  def home
+    @clothes = Clothe.all
+    @clothes_on_map = Clothe.select { |clothe| clothe.localisable? }
+    @markers = @clothes_on_map.map do |clothe|
+      {
+        lng: clothe.longitude,
+        lat: clothe.latitude,
+        infoWindow: { content: render_to_string(partial: "/clothes/map_window", locals: { clothe: clothe }) }
+      }
+    end
+  end
+
   def show
     @clothe = Clothe.find(params[:id])
   end
@@ -81,4 +93,5 @@ class ClothesController < ApplicationController
   def set_clothe
     @clothe = Clothe.find(params[:id])
   end
+
 end

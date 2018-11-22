@@ -8,7 +8,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_pack_tag "map" %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <!-- <%#= stylesheet_pack_tag 'application', media: 'all' %> Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
 
   <body class="<%= body_class %>">
@@ -20,5 +20,6 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
- </body>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  </body>
 </html>
