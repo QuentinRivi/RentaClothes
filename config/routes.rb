@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
   resources :notifications, only: [:index]
   root to: 'clothes#home'
+  get 'my-clothes', to: 'clothes#index_my_clothes', as: :my_clothes
+  put 'clothes/:id/available', to: 'clothes#make_available', as: :available
+  put 'clothes/:id/not-available', to: 'clothes#not_available', as: :not_available
+
 end
