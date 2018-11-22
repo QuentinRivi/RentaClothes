@@ -39,6 +39,12 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+      <div> <br>
+      <%= f.file_field :photo,
+        required: true,
+        autofocus: true ,
+        label: 'Choose photo for your Profile' %>
+    </div> <br>
     </div>
     </div>
     <div class="form-actions">
