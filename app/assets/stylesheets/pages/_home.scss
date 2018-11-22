@@ -1,13 +1,15 @@
 // Specific CSS for your home-page
 .banner {
-  color: white;
+  color: #eee;
   text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar =>  */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  padding-top: 40vh;
 }
 .banner h1 {
   font-size: 50px;
@@ -21,10 +23,19 @@
   opacity: 0.6;
   margin-bottom: 30px;
 }
-.main-container {
 
-
+#typed {
+  color: red;
 }
+
+#banner-typed-text {
+  color: red;
+}
+
+.container {
+  width: 100% !important;
+}
+
 #map {
   flex: 0 0 350px;
   height: 100vh /* - 70px */;
@@ -34,10 +45,8 @@
   height: 20vh;
   background-color: black;
 }
-.card-container {
-
-}
 
 #card-div {
   height: 100vh;
 }
+
