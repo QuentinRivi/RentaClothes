@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   end
   get 'profile', to: 'pages#profile'
   resources :notifications, only: [:index]
-  root to: 'clothes#index'
+  root to: 'clothes#home'
 end
