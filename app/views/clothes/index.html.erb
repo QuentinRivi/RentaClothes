@@ -6,20 +6,18 @@
 </div> <br> <br>
 
 <div class="filter">
-<%= search_form_for @q do |f| %>
+  <%= search_form_for @search do |f| %>
+    <%= f.label :"Looking for :" %>
+    <%= f.search_field :name_cont %>
 
-  <%= f.label :"Looking for :" %>
-  <%= f.search_field :name_cont %>
+    <%= f.label :"Brand :" %>
+    <%= f.search_field :brand_start %>
 
-  <%= f.label :"Brand :" %>
-  <%= f.search_field :brand_start %>
+    <%= f.label :"Size :"%>
+    <%= f.search_field :size_cont %>
 
-  <%= f.label :"Size :"%>
-  <%= f.search_field :size_cont %>
-
-  <%= f.submit :class => :"btn btn-primary" %>
-  <%= link_to "Reset", clothes_path, :class => :"btn btn-primary" %>
-
+    <%= f.submit :class => :"btn btn-primary" %>
+    <%= link_to "Reset", clothes_path, :class => :"btn btn-primary" %>
   <% end %>
 </div>
 
