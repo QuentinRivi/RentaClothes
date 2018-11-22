@@ -43,12 +43,12 @@
       <br>
 
 
-      <% if user_signed_in? && current_user = @clothe.owner %>
+      <% if user_signed_in? && current_user == @clothe.owner %>
       <div class="box-white">
 
         <div class="clothe-status">
-          <p>This clothe is <span class="label label-success">available</span></p>
-          <%= link_to 'Mark it not available', '#', class: "btn btn-default" %>
+          <p>This clothe is <%= render 'available_label', clothe: @clothe %></p>
+          <%= render 'status_button', clothe: @clothe %>
         </div>
        <div class="clothe-delete">
          <p>Don't want to rent it anymore ?</p>
