@@ -1,5 +1,8 @@
-  <div class="container text-center">
-    <div class = "box-white">
+  <div class="container">
+    <div class="back-button">
+      <a class="btn btn-default" href= "/clothes">👈 Back to all clothes</a>
+    </div>
+    <div class = "box-white text-center">
       <h1> <strong> <%= @clothe.name %> </strong> </h1>
       <br>
         <% if @clothe.photo.attached? %>
@@ -16,19 +19,42 @@
         <%= @clothe.brand %>
         <br><br>
 
-        The owner's name is
-        <%= @clothe.owner.first_name %>
-        <%= @clothe.owner.last_name %>
-        <br><br>
 
-        <%= link_to 'Delete this Clothe !', clothe_path(@clothe), :method => :delete  %>
+      <% if current_user != @clothe.owner %>
+        <p>The owner's name is <%= @clothe.owner.first_name %> <%= @clothe.owner.last_name %></p>
+      <% end %>
+
+      <% if current_user == @clothe.owner %>
+        <p>This clothe belongs to you.</p>
+      <% end %>
 
 
 
-        <% if user_signed_in? %>
-        <%= link_to 'Rent this clothe!' ,{controller: 'rentals', action: 'create', clothe_id: @clothe.id,  renter_id: current_user.id}, {:method => :post} %>
-        <a class="btn btn-primary" href= "/clothes">Menu</a>
+        <% if user_signed_in? && current_user != @clothe.owner %>
+          <%= link_to 'Rent this clothe!' ,{controller: 'rentals', action: 'create', clothe_id: @clothe.id,  renter_id: current_user.id}, {:method => :post} %>
         <% end %>
+
+        <% unless user_signed_in? %>
+          <%= link_to 'Log in or sign up to rent this clothe', user_session_path%>
+        <% end %>
+
+
       </div>
       <br>
+
+
+      <% if user_signed_in? && current_user = @clothe.owner %>
+      <div class="box-white">
+
+        <div class="clothe-status">
+          <p>This clothe is <span class="label label-success">available</span></p>
+          <%= link_to 'Mark it not available', '#', class: "btn btn-default" %>
+        </div>
+       <div class="clothe-delete">
+         <p>Don't want to rent it anymore ?</p>
+         <%= link_to 'Delete this Clothe !', clothe_path(@clothe), :method => :delete, class: "btn btn-danger"  %>
+       </div>
+
+      </div>
+      <% end %>
   </div>
