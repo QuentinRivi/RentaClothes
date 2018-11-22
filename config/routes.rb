@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
   resources :notifications, only: [:index]
   root to: 'clothes#index'
+  get 'my-clothes', to: 'clothes#index_my_clothes', as: :my_clothes
 end

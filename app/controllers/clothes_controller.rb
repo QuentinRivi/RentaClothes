@@ -34,6 +34,10 @@ class ClothesController < ApplicationController
       end
   end
 
+  def index_my_clothes
+    @clothes = Clothe.all.select { |clothe| clothe.owner == current_user }
+  end
+
   def edit
   end
 
