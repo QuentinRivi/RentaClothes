@@ -1,48 +1,43 @@
 
-<div class="bannerindex" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/1036856/pexels-photo-1036856.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+<div class="clothes-index">
+  <h1>Rent clothes!</h1>
+  <div class="row">
+    <div class="col-xs-12 col-md-3">
 
-<div> <br>
-<h2 class="title textwhite">Chose a clothe to rent!</h2>
-</div> <br> <br>
+      <div class="row">
+        <div class="col-xs-6 col-md-12 col-xs-offset-3 col-md-offset-0 filter_box_style">
+          <%= search_form_for @search do |f| %>
+            <div>
+            <%= f.label :"Looking for :", :class => :"filter_input_style" %> <br>
+            <%= f.search_field :name_cont, :class => :"filter_input_color" %>
+            </div>
 
-<div class="filter row">
-<%= search_form_for @search do |f| %>
+            <div>
+              <%= f.label :"Brand :", :class => :"filter_input_style" %> <br>
+              <%= f.search_field :brand_start, :class => :"filter_input_color" %>
+            </div>
 
-  <%= f.label :"Looking for :", :class => :"textwhite" %>
-  <%= f.search_field :name_cont, :class => :"inputstyle textwhite"  %>
+            <div>
+              <%= f.label :"Size :", :class => :"filter_input_style" %> <br>
+              <%= f.search_field :size_cont, :class => :"filter_input_color" %>
+            </div> <br>
 
-  <%= f.label :"Brand :", :class => :"textwhite" %>
-  <%= f.search_field :brand_start, :class => :"inputstyle textwhite" %>
+            <%= f.submit :class => :"btn btn-primary" %>
+            <%= link_to "Reset", clothes_path, :class => :"btn btn-primary" %>
+          <% end %>
+          <%= link_to "Add a clothe", "clothes/new", :class => :"btn btn-primary btn_search"%>
+        </div>
+      </div>
 
-  <%= f.label :"Size :", :class => :"textwhite" %>
-  <%= f.search_field :size_cont, :class => :"inputstyle textwhite" %>
-
-  <%= f.submit :class => :"btn btn-primary" %>
-  <%= link_to "Reset", clothes_path, :class => :"btn btn-primary" %>
-
-  <% end %>
-</div> <br>
-
-
-<div class="container text-center">
-  <% @clothes.each do |clothe| %>
-    <div class="col-xs-12 col-md-4">
-     <%= render 'clothecard', clothe: clothe %>
     </div>
-  <% end %>
-</div>
-
-<br><br>
-  <div class = "container text-center" >
-    <p class= "title-style textwhite">You can also <%= link_to "add", "clothes/new"%> a clothe </p>
+    <div class="col-xs-12 col-md-9">
+      <div class="row">
+        <% @clothes.each do |clothe| %>
+          <div class="col-xs-6 col-sm-3 col-md-4">
+           <%= render 'clothecard', clothe: clothe %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-
 </div>
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>

@@ -1,0 +1,91 @@
+.clothes-index {
+  background-color: white;
+  align-itmes: center;
+
+  h1{
+    text-align: center;
+    padding: 30px;
+  }
+  .filter_box_style {
+    height: 70vh;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .filter_input_style{
+    padding: 15px;
+  }
+
+  .filter_input_color {
+    background-color: rgba(196, 196, 196, 0.8);
+    border: none;
+    padding: 2px;
+    height: 40px;
+    width: 200px;
+  }
+
+   .filter_input_color:hover {
+    background-color: rgba(196, 196, 196, 0.4);
+
+  }
+
+  .col-xs-6{
+    padding: 3px;
+  }
+
+  .btn {
+    padding: 8px;
+    margin-top: 15px;
+  }
+
+  .btn_search{
+    margin-top: 20px;
+    width: 200px;
+  }
+
+}
+
+
+// .bannerindex {
+//   background-color: white;
+//   height: 100vh;
+//   background-size: cover !important;
+// }
+
+// .title{
+//   font-size: 50px;
+//   text-align: center;
+// }
+
+// .main-container {
+//   display: flex;
+// }
+
+// #boxfixleft {
+//   flex: 0 0 450px;
+//   height: 100vh;
+//   position: sticky !important; /* !important to override Gmaps inline CSS */
+//   top: 0 !important;
+// }
+
+// .filter {
+//   text-align: left;
+
+// }
+
+// .inputstyle {
+//   border-radius: 2px;
+//   background-color: rgba(74, 83, 96, 0.9);
+//   border: 1px solid white;
+// }
+
+// .btn-primary {
+//   color: white;
+//   background-color: rgb(91, 154, 218);
+//   border: none;
+// }
+
+// .btn-primary:hover {
+//   background-color: rgba(91, 154, 218, 0.9);
+//   border: none;
+// }
