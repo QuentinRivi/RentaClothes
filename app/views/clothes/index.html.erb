@@ -5,8 +5,8 @@
 <h2 class="title textwhite">Chose a clothe to rent!</h2>
 </div> <br> <br>
 
-<div class="filter">
-<%= search_form_for @q do |f| %>
+<div class="filter row">
+<%= search_form_for @search do |f| %>
 
   <%= f.label :"Looking for :", :class => :"textwhite" %>
   <%= f.search_field :name_cont, :class => :"inputstyle textwhite"  %>
@@ -19,15 +19,16 @@
 
   <%= f.submit :class => :"btn btn-primary" %>
   <%= link_to "Reset", clothes_path, :class => :"btn btn-primary" %>
+
   <% end %>
-</div> <br> <br>
+</div> <br>
 
 
 <div class="container text-center">
   <% @clothes.each do |clothe| %>
     <div class="col-xs-12 col-md-4">
      <%= render 'clothecard', clothe: clothe %>
-  </div>
+    </div>
   <% end %>
 </div>
 

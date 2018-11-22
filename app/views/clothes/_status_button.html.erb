@@ -1,0 +1,5 @@
+<% if clothe.available? %>
+  <%= link_to 'Mark it not available', not_available_path(clothe), method: :put %>
+<% else %>
+    <%= link_to 'Mark it available', available_path(clothe), method: :put %>
+<% end %>

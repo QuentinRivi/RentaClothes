@@ -1,8 +1,22 @@
 class ClothesController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_clothe, only: [:edit, :update, :destroy]
+  before_action :set_clothe, only: [:edit, :update, :destroy, :not_available, :make_available]
 
+  def available?
+    available
+  end
+
+  def make_available
+    @clothe.available = true
+    @clothe.save
+    redirect_to clothe_path(@clothe), notice: "#{@clothe.name.capitalize} is now available and can be rented."
+  end
+
+  def not_available
+    @clothe.available = false
+    @clothe.save
+    redirect_to clothe_path(@clothe), notice: "#{@clothe.name.capitalize} is not available anymore."
+  end
 
   def new
     @clothe = Clothe.new
@@ -21,17 +35,21 @@ class ClothesController < ApplicationController
   end
 
   def index
-    @q = Clothe.ransack(params[:q])
-    @clothes = @q.result(distinct: true)
-    @clothes_on_map = Clothe.select { |clothe| clothe.localisable? }
+    @search = Clothe.ransack(params[:q])
+    @clothes = @search.result(distinct: true).select(&:available?)
+    @clothes_on_map = Clothe.select(&:localisable?)
 
-      @markers = @clothes_on_map.map do |clothe|
-        {
-          lng: clothe.longitude,
-          lat: clothe.latitude,
-          infoWindow: { content: render_to_string(partial: "/clothes/map_window", locals: { clothe: clothe }) }
-        }
-      end
+    @markers = @clothes_on_map.map do |clothe|
+      {
+        lng: clothe.longitude,
+        lat: clothe.latitude,
+        infoWindow: { content: render_to_string(partial: "/clothes/map_window", locals: { clothe: clothe }) }
+      }
+    end
+  end
+
+  def index_my_clothes
+    @clothes = Clothe.all.select { |clothe| clothe.owner == current_user }
   end
 
   def edit
@@ -47,7 +65,19 @@ class ClothesController < ApplicationController
 
   def destroy
     @clothe.destroy
-    redirect_to '/clothes', :notice => "Your clothe has been deleted"
+    redirect_to '/clothes', notice: "Your clothe has been deleted"
+  end
+
+  def home
+    @clothes = Clothe.all
+    @clothes_on_map = Clothe.select { |clothe| clothe.localisable? }
+    @markers = @clothes_on_map.map do |clothe|
+      {
+        lng: clothe.longitude,
+        lat: clothe.latitude,
+        infoWindow: { content: render_to_string(partial: "/clothes/map_window", locals: { clothe: clothe }) }
+      }
+    end
   end
 
   def show
@@ -63,4 +93,5 @@ class ClothesController < ApplicationController
   def set_clothe
     @clothe = Clothe.find(params[:id])
   end
+
 end

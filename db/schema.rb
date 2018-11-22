@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_11_22_131346) do
     t.integer "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "available", default: true
     t.index ["owner_id"], name: "index_clothes_on_owner_id"
   end
 
