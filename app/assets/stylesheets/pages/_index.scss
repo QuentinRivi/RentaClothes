@@ -4,41 +4,4 @@
 @import "sign_in";
 @import "sign_up";
 @import "new_clothe";
-
-.title{
-  font-size: 50px;
-  text-align: center;
-}
-
-.title-style {
-  font-size: 30px;
-  text-align: center;
-}
-
-.bannerindex {
-  background-color: white;
-  height: 100vh;
-  background-size: cover !important;
-}
-
-.filter {
-  text-align: center;
-}
-
-
-.inputstyle {
-  border-radius: 2px;
-  background-color: rgba(74, 83, 96, 0.9);
-  border: 1px solid white;
-}
-
-.btn-primary {
-  color: white;
-  background-color: rgb(91, 154, 218);
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: rgba(91, 154, 218, 0.9);
-  border: none;
-}
+@import "clothes_index";
