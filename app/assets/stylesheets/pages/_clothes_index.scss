@@ -1,0 +1,72 @@
+.clothes-index {
+  background-color: white;
+  align-itmes: center;
+
+  h1{
+    text-align: center;
+    padding: 30px;
+  }
+  .filter_box_style {
+    height: 80vh;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .filter_input_style{
+    padding: 15px;
+  }
+
+  .filter_input_color {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: solid 1px;
+    border-radius: 2px;
+    border-color: rgba(189, 189, 189, 0.8);
+    padding: 2px;
+    height: 40px;
+    width: 200px;
+  }
+
+   .filter_input_color:hover {
+    background-color: rgba(220, 220, 220, 0.4);
+
+  }
+
+  .col-xs-6{
+    padding: 0px;
+  }
+
+  .col-md-9 {
+    padding-right: 50px;
+  }
+
+   .col-md-3 {
+    padding-right: 5px;
+  }
+
+  .btn {
+    padding: 8px;
+    margin-top: 15px;
+  }
+
+  .btn_search {
+    width: 130px;
+  }
+
+  .btn_add {
+    width: 100%;
+    padding: 18px;
+    background-color: rgba(87, 181, 96, 1);
+    border: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+   .btn_add:hover {
+    background-color: rgba(87, 181, 96, 0.5);
+  }
+
+
+}

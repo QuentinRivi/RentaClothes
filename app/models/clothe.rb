@@ -4,7 +4,6 @@ class Clothe < ApplicationRecord
   has_one_attached :photo
   has_many :rentals, dependent: :destroy
 
-
   def address
     owner.address
   end

@@ -13,3 +13,8 @@
 .alert-warning {
   background: $red;
 }
+
+.alert-hidden {
+  opacity: 0 !important;
+  transition-duration: 1s;
+}

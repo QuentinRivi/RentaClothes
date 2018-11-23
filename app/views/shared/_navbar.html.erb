@@ -1,62 +1,125 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logorentaclothe.png", height: 50 %>
-  <% end %>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <% if user_signed_in? %>
-
-      <!-- Links when logged in -->
-      <%= link_to "My Clothes", my_clothes_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to notifications_path, class: 'navbar-wagon-item navbar-wagon-link' do %>
-        Notifications
-        <% if count_notifications > 0 %>
-        <span class="badge"> <%= count_notifications %></span>
-        <% end %>
-      <% end %>
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "/profile" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+<% if  current_page?("/") %>
+  <div class="navbar-wagon navbar-fixed-top">
+    <!--  -->
+    <!-- Logo -->
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logorentaclothe.png", height: 50 %>
     <% end %>
-  </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <% if user_signed_in? %>
+
+        <!-- Links when logged in -->
+        <%= link_to "My Clothes", my_clothes_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      
+        <%= link_to notifications_path, class: 'navbar-wagon-item navbar-wagon-link' do %>
+          Notifications
+          <% if count_notifications > 0 %>
+          <span class="badge"> <%= count_notifications %></span>
+          <% end %>
+        <% end %>
+
+        <!-- Avatar with dropdown menu -->
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to "/profile" do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: current_user.first_name) %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to edit_user_registration_path do %>
+                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% else %>
+        <!-- Login link (when logged out) -->
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+    </div>
+
+    <!-- Dropdown list appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Some mobile link</a></li>
+          <li><a href="#">Other one</a></li>
+          <li><a href="#">Other one</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+
+<% else %>
+  <div class="navbar-wagon navbar-wagon-white navbar-wagon-fixed-top">
+    <!-- Logo -->
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logorentaclothe.png", height: 50 %>
+    <% end %>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <% if user_signed_in? %>
+
+        <!-- Links when logged in -->
+        <%= link_to "My Clothes", my_clothes_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Notifications", notifications_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+        <!-- Avatar with dropdown menu -->
+        <div class="navbar-wagon-item">
+          <div class="dropdown">
+            <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li>
+                <%= link_to "/profile" do %>
+                  <i class="fa fa-user"></i> <%= t(".profile", default: current_user.first_name) %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to edit_user_registration_path do %>
+                  <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% else %>
+        <!-- Login link (when logged out) -->
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+    </div>
+
+    <!-- Dropdown list appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Some mobile link</a></li>
+          <li><a href="#">Other one</a></li>
+          <li><a href="#">Other one</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
 
