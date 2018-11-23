@@ -1,7 +1,7 @@
 <div class="profile-background-size">
 
   <div class= "box-profile text-center">
-   <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", id: "profile-image", :class => "user-image" %>
+    <%= image_tag @user.avatar, id: "profile-image", :class => "user-image"  %>
   </div>
 
   <div class= "box-white text-center">
@@ -14,6 +14,6 @@
     <p><i class="fas fa-map-marker-alt"></i>   <%= @user.address %></p>
     <p><i class="fas fa-phone"></i>  <%= @user.phone %></p>
     <p><i class="fas fa-table"></i>  <%= @user.birth %></p>
-    <button class="btn btn-primary" href="/clothes">Edit Profile</button>
+    <%= link_to "Edit Profile", edit_user_registration_path %>
 </div>
 
