@@ -13,12 +13,13 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
+        <%= link_to "Clothes", clothes_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "My Clothes", my_clothes_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
         <%= link_to notifications_path, class: 'navbar-wagon-item navbar-wagon-link' do %>
           Notifications
           <% if count_notifications > 0 %>
-          <span class="badge"> <%= count_notifications %></span>
+            <span class="badge"> <%= count_notifications %></span>
           <% end %>
         <% end %>
 
@@ -77,8 +78,14 @@
       <% if user_signed_in? %>
 
         <!-- Links when logged in -->
+        <%= link_to "Clothes", clothes_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "My Clothes", my_clothes_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "Notifications", notifications_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to notifications_path, class: 'navbar-wagon-item navbar-wagon-link' do %>
+          Notifications
+          <% if count_notifications > 0 %>
+            <span class="badge"> <%= count_notifications %></span>
+          <% end %>
+        <% end %>
 
         <!-- Avatar with dropdown menu -->
         <div class="navbar-wagon-item">
