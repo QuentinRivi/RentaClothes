@@ -2,12 +2,8 @@
 <div class="clothes-index">
   <h1>Rent clothes!</h1>
 
-    <%= link_to "Add a clothe", "clothes/new", :class => :"btn btn-primary btn_add"%>
-
   <div class="row">
-
     <div class="col-xs-12 col-md-3">
-
       <div class="row">
         <div class="col-xs-6 col-md-12 col-xs-offset-3 col-md-offset-0 filter_box_style">
           <%= search_form_for @search do |f| %>
@@ -43,7 +39,9 @@
       </div>
     </div>
   </div>
-  <%= link_to "Add a clothe", "clothes/new", :class => :"btn btn-primary btn_add"%>
+    <div class="footer_for_index">
+    <%= link_to "Add a clothe", "clothes/new", :class => :"btn btn-primary btn_add"%>
+    </div>
 </div>
 
 
