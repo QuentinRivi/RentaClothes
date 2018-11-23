@@ -27,10 +27,7 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-
-        <div> <br>
-    <a><%= f.file_field :photo , label: 'Choose photo for your Profile'%></a>
-    </div> <br>
+    <%= f.file_field :avatar, label: 'Choose photo for your Profile'%>
   </div>
 
 </div>
