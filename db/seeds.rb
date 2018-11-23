@@ -30,7 +30,7 @@ chaussure = Clothe.create!(name: 'Shoes', size: "32", brand: "Lacoste", state: "
 chaussure.photo.attach(io: File.open('./app/assets/images/chaussure.jpg'), filename: 'chaussure.jpg')
 licorne_outfit = Clothe.create!(name: 'licorne', size: "S", brand: "Lacoste", state: "4", owner_id: manue.id)
 licorne_outfit.photo.attach(io: File.open('./app/assets/images/licorne.jpg'), filename: 'licorne.jpg')
-skirt = Clothe.create!(name: 'Skirt', size: "XXL", brand: "Guess", state: "4", owner_id: manue.id)
+skirt = Clothe.create!(name: 'Alex Shirt', size: "XXL", brand: "Guess", state: "4", owner_id: manue.id)
 skirt.photo.attach(io: File.open('./app/assets/images/skirt.jpg'), filename: 'skirt.jpg')
 pants = Clothe.create!(name: 'Pants', size: "XL", brand: "Levis", state: "3", owner_id: quentin.id)
 pants.photo.attach(io: File.open('./app/assets/images/pants.jpg'), filename: 'pants.jpg')
