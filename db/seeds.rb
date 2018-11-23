@@ -42,7 +42,7 @@ swimsuit = Clothe.create!(name: 'Swimsuit', size: "XXL", brand: "Arena", state: 
 swimsuit.photo.attach(io: File.open('./app/assets/images/swimsuit.jpg'), filename: 'swimsuit.jpg')
 gardener = Clothe.create!(name: 'Gardener', size: "S", brand: "Leggo", state: "1", owner_id: andde.id)
 gardener.photo.attach(io: File.open('./app/assets/images/gardener.jpg'), filename: 'gardener.jpg')
-dress = Clothe.create!(name: 'dress', size: "L", brand: "Fruits", state: "2", owner_id: andde.id)
+dress = Clothe.create!(name: 'Dress', size: "L", brand: "Fruits", state: "2", owner_id: andde.id)
 dress.photo.attach(io: File.open('./app/assets/images/dress.jpg'), filename: 'dress.jpg')
 pullover = Clothe.create!(name: 'Pull-over', size: "S", brand: "Leggo", state: "1", owner_id: andde.id)
 pullover.photo.attach(io: File.open('./app/assets/images/pullover.jpg'), filename: 'pullover.jpg')
