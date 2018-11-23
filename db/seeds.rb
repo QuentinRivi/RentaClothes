@@ -23,7 +23,7 @@ tee_shirt.save!
 pull = Clothe.create!(name: 'Pull', size: "XS", brand: "Sergio", state: "2", owner_id: quentin.id)
 pull.photo.attach(io: File.open('./app/assets/images/pull.jpg'), filename: 'pull.jpg')
 pull.save!
-chaussure = Clothe.create!(name: 'Chaussure', size: "32", brand: "Lacoste", state: "5", owner_id: arthur.id)
+chaussure = Clothe.create!(name: 'Shoes', size: "32", brand: "Lacoste", state: "5", owner_id: arthur.id)
 chaussure.photo.attach(io: File.open('./app/assets/images/chaussure.jpg'), filename: 'chaussure.jpg')
 p chaussure.save!
 puts "done"
