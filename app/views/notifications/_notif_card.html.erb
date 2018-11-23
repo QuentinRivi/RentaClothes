@@ -15,10 +15,18 @@
       <p>Please contact <%= notification.rental.renter.first_name %> <%= notification.rental.renter.last_name %> at <%= notification.rental.renter.email%> and send your clothe.</p>
     </div>
 
-     <div class="notif-date">
-      <p><%= notification.created_at.to_s(:long_ordinal) %></p>
-    </div>
 
+    <div class="notif-info">
+       <div class="notif-date">
+        <p><%= notification.created_at.to_s(:long_ordinal) %></p>
+      </div>
+
+      <% if notification.read == false %>
+        <div class="mark-read">
+          <%= link_to 'Mark as read', mark_read_path(notification), method: :put %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
 </div>

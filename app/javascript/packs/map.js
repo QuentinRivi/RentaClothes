@@ -3,10 +3,10 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 const mapElement = document.getElementById('map');
-const markers = JSON.parse(mapElement.dataset.markers);
 
 
 if (mapElement) { // only build a map if there's a div#map to inject into
+  const markers = JSON.parse(mapElement.dataset.markers);
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const map = new mapboxgl.Map({
     container: 'map',
