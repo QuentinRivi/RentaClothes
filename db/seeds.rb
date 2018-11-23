@@ -15,7 +15,7 @@ manue = User.create(first_name: 'Emmanuelle', last_name: "Nadal", address: "Vill
 manue.avatar.attach(io: File.open('./app/assets/images/manue.jpg'), filename: 'manue.jpg')
 quentin = User.create(first_name: 'Quentin', last_name: "Rivière", address: "Croix-rousse", email: "quentin.l.riviere@gmail.com", password: "azerty")
 quentin.avatar.attach(io: File.open('./app/assets/images/buddy.JPG'), filename: 'buddy.JPG')
-arthur = User.create!(first_name: 'Arthur', last_name: "Delbosco", address: "Venissieux", email: "arthur@gmail.com", password: "azerty")
+arthur = User.create!(first_name: 'Arthur', last_name: "Delbosco", address: "Cours Lafayette", email: "arthur@gmail.com", password: "azerty")
 arthur.avatar.attach(io: File.open('./app/assets/images/arthur.jpg'), filename: 'arthur.jpg')
 andde = User.create!(first_name: 'Andde', last_name: "Indaburru", address: "Vieux-lyon", email: "andde@gmail.com", password: "azerty")
 arthur.avatar.attach(io: File.open('./app/assets/images/andde.jpg'), filename: 'andde.jpg')
