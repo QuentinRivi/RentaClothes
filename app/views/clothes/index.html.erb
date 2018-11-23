@@ -1,7 +1,11 @@
 
 <div class="clothes-index">
   <h1>Rent clothes!</h1>
+
+    <%= link_to "Add a clothe", "clothes/new", :class => :"btn btn-primary btn_add"%>
+
   <div class="row">
+
     <div class="col-xs-12 col-md-3">
 
       <div class="row">
@@ -22,10 +26,9 @@
               <%= f.search_field :size_cont, :class => :"filter_input_color" %>
             </div> <br>
 
-            <%= f.submit :class => :"btn btn-primary" %>
+            <%= f.submit :class => :"btn btn-primary btn_search" %>
             <%= link_to "Reset", clothes_path, :class => :"btn btn-primary" %>
           <% end %>
-          <%= link_to "Add a clothe", "clothes/new", :class => :"btn btn-primary btn_search"%>
         </div>
       </div>
 
@@ -33,11 +36,18 @@
     <div class="col-xs-12 col-md-9">
       <div class="row">
         <% @clothes.each do |clothe| %>
-          <div class="col-xs-6 col-sm-3 col-md-4">
+          <div class="col-xs-6 col-sm-3 col-md-3">
            <%= render 'clothecard', clothe: clothe %>
           </div>
         <% end %>
       </div>
     </div>
   </div>
+  <%= link_to "Add a clothe", "clothes/new", :class => :"btn btn-primary btn_add"%>
 </div>
+
+
+
+
+
+
