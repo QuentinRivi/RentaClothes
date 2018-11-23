@@ -1,63 +1,65 @@
-<div class="container">
+
+<div class="show-clothes">
+
   <div class="back-button">
     <% back_path = request.referer ? request.referer : clothes_path %>
     <%= link_to back_path, class: 'btn btn-default' do %>
       👈 Back to all clothes
     <% end %>
   </div>
-  <div class = "box-white text-center">
-    <h1> <strong> <%= @clothe.name %> </strong> </h1>
-    <br>
-      <% if @clothe.photo.attached? %>
-        <%= image_tag @clothe.photo.variant(resize: '458x458') %>
-      <% end %>
-      <br><br>
-        <% @clothe.state.times do %><i class="fas fa-star fa-xs"></i><% end %><% (5 - @clothe.state).times do %><i class= "far fa-star fa-xs"></i><% end %>
-      <br><br>
 
-     <strong>Size :</strong>
-      <%= @clothe.size %>
-      <br><br>
-      <strong>Brand :</strong>
-      <%= @clothe.brand %>
-      <br><br>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+          <div class="box-white-with-picture text-center">
+            <h1> <strong> <%= @clothe.name %> </strong> </h1>
+            <br>
+              <% if @clothe.photo.attached? %>
+                <%= image_tag @clothe.photo.variant(resize: '458x458') %>
+              <% end %>
+              <br><br>
+                <% @clothe.state.times do %><i class="fas fa-star fa-xs"></i><% end %><% (5 - @clothe.state).times do %><i class= "far fa-star fa-xs"></i><% end %>
+              <br><br>
 
+             <strong>Size :</strong>
+              <%= @clothe.size %>
+              <br><br>
+              <strong>Brand :</strong>
+              <%= @clothe.brand %>
+              <br><br>
 
-    <% if current_user != @clothe.owner %>
-      <p>The owner's name is <%= @clothe.owner.first_name %> <%= @clothe.owner.last_name %></p>
-    <% end %>
+              <% if current_user != @clothe.owner %>
+                <p>The owner's name is <%= @clothe.owner.first_name %> <%= @clothe.owner.last_name %></p>
+              <% end %>
 
-    <% if current_user == @clothe.owner %>
-      <p>This clothe belongs to you.</p>
-    <% end %>
-
-
-
-      <% if user_signed_in? && current_user != @clothe.owner %>
-        <%= link_to 'Rent this clothe!' ,{controller: 'rentals', action: 'create', clothe_id: @clothe.id,  renter_id: current_user.id}, {:method => :post} %>
-      <% end %>
-
-      <% unless user_signed_in? %>
-        <%= link_to 'Log in or sign up to rent this clothe', user_session_path%>
-      <% end %>
+              <% if current_user == @clothe.owner %>
+                <p>This clothe belongs to you.</p>
+              <% end %>
 
 
-  </div>
-    <br>
+              <% if user_signed_in? && current_user != @clothe.owner %>
+                <%= link_to 'Rent this clothe!' ,{controller: 'rentals', action: 'create', clothe_id: @clothe.id,  renter_id: current_user.id}, {:method => :post} %>
+              <% end %>
 
+              <% unless user_signed_in? %>
+                <%= link_to 'Log in or sign up to rent this clothe', user_session_path%>
+              <% end %>
 
-    <% if current_user == @clothe.owner %>
-    <div class="box-white">
+            </div>
+          </div>
 
-      <div class="clothe-status">
-        <p>This clothe is <%= render 'available_label', clothe: @clothe %></p>
-        <%= render 'status_button', clothe: @clothe %>
+            <div class="col-sm-3 col-xs-12">
+                <% if current_user == @clothe.owner %>
+                <div class="box-white-with-action">
+                  <div class="clothe-status">
+                    <p>This clothe is <%= render 'available_label', clothe: @clothe %></p>
+                    <%= render 'status_button', clothe: @clothe %>
+                  </div> <br>
+                 <div class="clothe-delete">
+                   <p>Don't want to rent it anymore ?</p> <br>
+                   <%= link_to 'Delete this Clothe !', clothe_path(@clothe), :method => :delete, class: "btn btn-danger"  %>
+                 </div>
+                </div>
+                <% end %>
+          </div>
       </div>
-     <div class="clothe-delete">
-       <p>Don't want to rent it anymore ?</p>
-       <%= link_to 'Delete this Clothe !', clothe_path(@clothe), :method => :delete, class: "btn btn-danger"  %>
-     </div>
-
-    </div>
-    <% end %>
 </div>
