@@ -7,7 +7,7 @@
     padding: 30px;
   }
   .filter_box_style {
-    height: 70vh;
+    height: 80vh;
     text-align: center;
     padding-bottom: 30px;
   }
@@ -17,20 +17,30 @@
   }
 
   .filter_input_color {
-    background-color: rgba(196, 196, 196, 0.8);
-    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: solid 1px;
+    border-radius: 2px;
+    border-color: rgba(189, 189, 189, 0.8);
     padding: 2px;
     height: 40px;
     width: 200px;
   }
 
    .filter_input_color:hover {
-    background-color: rgba(196, 196, 196, 0.4);
+    background-color: rgba(220, 220, 220, 0.4);
 
   }
 
   .col-xs-6{
-    padding: 3px;
+    padding: 0px;
+  }
+
+  .col-md-9 {
+    padding-right: 50px;
+  }
+
+   .col-md-3 {
+    padding-right: 5px;
   }
 
   .btn {
@@ -38,54 +48,25 @@
     margin-top: 15px;
   }
 
-  .btn_search{
-    margin-top: 20px;
-    width: 200px;
+  .btn_search {
+    width: 130px;
   }
 
+  .btn_add {
+    width: 100%;
+    padding: 18px;
+    background-color: rgba(87, 181, 96, 1);
+    border: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+   .btn_add:hover {
+    background-color: rgba(87, 181, 96, 0.5);
+  }
+
+
 }
-
-
-// .bannerindex {
-//   background-color: white;
-//   height: 100vh;
-//   background-size: cover !important;
-// }
-
-// .title{
-//   font-size: 50px;
-//   text-align: center;
-// }
-
-// .main-container {
-//   display: flex;
-// }
-
-// #boxfixleft {
-//   flex: 0 0 450px;
-//   height: 100vh;
-//   position: sticky !important; /* !important to override Gmaps inline CSS */
-//   top: 0 !important;
-// }
-
-// .filter {
-//   text-align: left;
-
-// }
-
-// .inputstyle {
-//   border-radius: 2px;
-//   background-color: rgba(74, 83, 96, 0.9);
-//   border: 1px solid white;
-// }
-
-// .btn-primary {
-//   color: white;
-//   background-color: rgb(91, 154, 218);
-//   border: none;
-// }
-
-// .btn-primary:hover {
-//   background-color: rgba(91, 154, 218, 0.9);
-//   border: none;
-// }
