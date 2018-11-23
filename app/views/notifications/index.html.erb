@@ -1,9 +1,15 @@
-<div class="container">
+<div class="container-notifications">
 
-<h1>Hello, <%= current_user.first_name %></h1>
+  <h1>Hello, <%= current_user.first_name %></h1>
 
-<% @notifications.each do |notification| %>
-  <%= render 'notif_card', notification: notification %>
-<% end %>
+  <% if @notifications.blank? %>
+    <div class="empty-state-notif">
+      <p>You don't have any notifications yet. You'll be notified here if someone rents one of your clothes. In the meantime, you can <%= link_to 'add', new_clothe_path %> a new piece of clothing to rent if you want.</p>
+    </div>
+  <% end %>
+
+  <% @notifications.each do |notification| %>
+    <%= render 'notif_card', notification: notification %>
+  <% end %>
 
 </div>
