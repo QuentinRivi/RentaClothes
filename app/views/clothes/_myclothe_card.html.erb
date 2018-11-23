@@ -5,31 +5,33 @@
     <div class="card-state">
       State: <% clothe.state.times do %><i class="fas fa-star fa-xs"></i><% end %><% (5 - clothe.state).times do %><i class="far fa-star fa-xs"></i><% end %>
 
-  </div>
+    </div>
 
     <div class="card-description">
       <h2><%= clothe.name %></h2>
     </div>
 
-  <div class="card-brand">
-    <p><%= clothe.brand %></p>
-  </div>
-  <div class="card-size">
-    <p class="label label-primary"><%= clothe.size %></p>
-  </div>
+    <div class="card-brand">
+      <p><%= clothe.brand %></p>
+    </div>
+    <div class="card-size">
+      <p class="label label-primary"><%= clothe.size %></p>
+    </div>
     <a class="card-link" href=clothes/<%= clothe.id %> ></a>
   </div>
 
   <div class="clothe-status">
-  <% if clothe.available? %>
-    <p>This item is <strong>available.</strong></p>
-  <% else %>
-    <p>This item is <strong>not available.</strong></p>
-  <% end %>
+    <% if clothe.available? %>
+      <p>This item is <strong>available.</strong></p>
+    <% else %>
+      <p>This item is <strong>not available.</strong></p>
+    <% end %>
 
-  <div class="card-actions">
-      <%= render 'status_button', clothe: clothe, class:"btn btn-link" %>
-     <%= link_to 'Delete', clothe_path(clothe), :method => :delete, class: "btn btn-danger"  %>
+    <div class="card-actions">
+        <%= render 'status_button', clothe: clothe, class:"btn btn-link" %>
+       <%= link_to 'Delete', clothe_path(clothe), :method => :delete, class: "btn btn-danger"  %>
 
+    </div>
   </div>
+
 </div>
