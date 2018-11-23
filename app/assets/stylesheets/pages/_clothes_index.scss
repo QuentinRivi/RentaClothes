@@ -31,6 +31,10 @@
 
   }
 
+  .row {
+    padding-bottom: 40px;
+  }
+
   .col-xs-6{
     padding: 0px;
   }
@@ -46,26 +50,34 @@
   .btn {
     padding: 8px;
     margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .btn_search {
     width: 130px;
   }
 
-  .btn_add {
+  .footer_for_index {
     width: 100%;
-    padding: 18px;
-    background-color: rgba(87, 181, 96, 1);
+    background-color: rgba(240, 240, 240, 0.9);
     border: none;
     position: fixed;
     bottom: 0;
     right: 0;
-    font-size: 25px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+  }
+
+  .btn_add {
+    font-size: 20px;
+    background-color: rgb(87, 181, 96);
+    border: none;
   }
 
    .btn_add:hover {
-    background-color: rgba(87, 181, 96, 0.5);
+    background-color: rgba(87, 181, 96, 0.8);
   }
 
 
