@@ -49,6 +49,8 @@
   top: 0 !important;
 }
 .footer {
+  display: flex;
+  justify-content: center;
   height: 20vh;
   background: #000;
   width: 100%;
@@ -71,7 +73,7 @@ center {
 }
 
 #social-test {
-  align-items: center;
+
   display: table-cell;
   vertical-align: middle;
   text-align: center;
